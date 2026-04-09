@@ -1,0 +1,45 @@
+Package: minifunctions
+Title: minifunctions package by Eduardo Jacob
+Version: 0.0.2
+Authors@R: 
+    person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0009-2103-852X"))
+Description: my collection of mini functions.
+License: MIT + file LICENSE
+URL:
+Depends: 
+    R (>= 4.1.0)
+Imports:
+    base64enc,
+    ellmer,
+    gemini.R,
+    gmp,
+    grid,
+    gtools,
+    htmltools,
+    httr2,
+    jpeg,
+    kableExtra,
+    knitr,
+    markdown,
+    methods,
+    numbers,
+    numDeriv,
+    oro.dicom,
+    png,
+    polynom,
+    primes,
+    RColorBrewer,
+    Rmpfr,
+    rstudioapi,
+    shiny,
+    shinychat,
+    stringr,
+    TeachingDemos,
+    tools
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
