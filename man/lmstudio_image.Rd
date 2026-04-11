@@ -9,7 +9,7 @@ lmstudio_image(prompt, image_path)
 \arguments{
 \item{prompt}{Text prompt}
 
-\item{image}{Path to image}
+\item{image_path}{Path to image}
 }
 \description{
 Submit a prompt to local LM Studio LLM

@@ -71,7 +71,7 @@ displaymedialoop = function(filename) {
 
   if ( origin == "CLOUD" && grepl(extension,"pdf") ) {
     htmltools::html_print(
-      tags$iframe(
+      htmltools::tags$iframe(
         src = filename,
         style = "width:100%; height:1000px;",
         frameborder = 0

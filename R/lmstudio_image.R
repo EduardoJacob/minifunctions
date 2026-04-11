@@ -1,7 +1,7 @@
 #' Submit a prompt to local LM Studio LLM
 #'
 #' @param prompt Text prompt
-#' @param image Path to image
+#' @param image_path Path to image
 #'
 #' @export
 #'

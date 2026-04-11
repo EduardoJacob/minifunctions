@@ -20,6 +20,11 @@ printdataframe = function(df) {
   caption = paste0("<p style='color:black;font-weight:bold;text-align:center'>",dataframe,"</p>")
 
   HTML = df |>
+    # automatically convert any URL in the data frame to a clickable link
+    dplyr::mutate(dplyr::across(dplyr::everything(), ~ ifelse(grepl("http", .),
+                                         paste0("<a href='", ., "' target='_blank'>", ., "</a>"),
+                                         .))) |>
+
     knitr::kable(format="html",row.names=T,caption=caption,escape = FALSE) |>
     kableExtra::kable_styling(bootstrap_options = c("striped", "hover"),
                   full_width = F,
