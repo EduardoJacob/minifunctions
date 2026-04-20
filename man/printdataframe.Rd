@@ -4,10 +4,12 @@
 \alias{printdataframe}
 \title{Print Data Frame as HTML Table}
 \usage{
-printdataframe(df)
+printdataframe(df, expand_images = FALSE)
 }
 \arguments{
 \item{df}{Data Frame to be printed as HTML Table}
+
+\item{expand_images}{Boolean: if TRUE, image URLs will be expanded to show the images in the table.}
 }
 \description{
 Print Data Frame as HTML Table
