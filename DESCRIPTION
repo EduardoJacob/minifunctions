@@ -8,7 +8,7 @@ Description: my collection of mini functions.
 License: MIT + file LICENSE
 URL: https://github.com/EduardoJacob/minifunctions
 Depends: 
-    R (>= 4.1.0)
+    R (>= 4.1.1)
 Imports:
     base64enc,
     dplyr,
