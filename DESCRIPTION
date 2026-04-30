@@ -8,7 +8,7 @@ Description: my collection of mini functions.
 License: MIT + file LICENSE
 URL: https://github.com/EduardoJacob/minifunctions
 Depends: 
-    R (>= 4.1.1)
+    R (>= 4.1.2)
 Imports:
     base64enc,
     dplyr,
@@ -31,6 +31,7 @@ Imports:
     png,
     polynom,
     primes,
+    purrr,
     RColorBrewer,
     Rmpfr,
     rstudioapi,
