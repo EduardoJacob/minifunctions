@@ -46,12 +46,7 @@ https://www.youtube.com/playlist?list=PLRbCt61PaxX2d0_QXh6Qi6_jAQd66fmcI
 * [cite_start]**`newtonmethod(f, x0, n)`**: Approximates the root of a function `f` using the Newton-Raphson method, starting from an initial guess `x0` and running for `n` iterations[cite: 85, 86].
 * [cite_start]**`parabola(a, b, c)`**: Solves and displays properties of a parabola given in standard form ($ax^2 + bx + c$), providing the vertex, focus, directrix, and roots[cite: 91, 92].
 * [cite_start]**`parabolafromfocus(h, f, d)`**: Derives the equation and properties of a parabola based on the coordinates of its focus and the equation of its directrix[cite: 92, 93].
-
-### LLM Integration
-* [cite_start]**`gemini(prompt)`**: Sends a text prompt to Google's Gemini API and renders the Markdown response as HTML within the RStudio Viewer[cite: 74, 75].
-* [cite_start]**`ollama(prompt)`**: Connects to a local Ollama instance to generate responses from locally hosted LLMs, displaying the output in RStudio[cite: 89, 90, 91].
-* [cite_start]**`lmstudio(prompt)`** and **`lmstudio_image(prompt, image_path)`**: Interfaces with LM Studio to provide local LLM chat capabilities, including support for multi-modal image analysis prompts[cite: 78, 79, 80, 81, 82, 83].
-
+ 
 ### Data Visualization and Utility
 * [cite_start]**`displaymedia(filename)`**: A versatile viewer for RStudio that supports displaying images, PDFs, videos, and YouTube links from either local or cloud sources[cite: 63, 64, 65, 66, 67, 68, 69, 70, 71, 72].
 * [cite_start]**`printdataframe(df)`**: Renders an R data frame as a styled, interactive HTML table with alternating row colors and clickable URLs, optimized for the RStudio viewer[cite: 95, 96, 97, 98].
