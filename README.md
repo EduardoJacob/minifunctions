@@ -1,5 +1,5 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.Rmd. Please edit that file  -->
 
 # minifunctions <img src="man/figures/logo.png" align="right" height="138" alt="minifunctions package" />
 
@@ -9,9 +9,8 @@
 
 This repository contains a collection of R utility functions covering
 various domains including Number Theory, Algebra, Combinatorics, and
-RStudio integration. These tools leverage high-precision arithmetic and
-external LLM APIs to provide robust mathematical and investigative
-capabilities.
+RStudio integration. These tools leverage high-precision arithmetic to
+provide robust mathematical and investigative capabilities.
 
 take a look at my youtube playlist with R Tutorials:
 

@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.Rmd. Please edit that file  -->
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-This repository contains a collection of R utility functions covering various domains including Number Theory, Algebra, Combinatorics, and RStudio integration. These tools leverage high-precision arithmetic and external LLM APIs to provide robust mathematical and investigative capabilities.
+This repository contains a collection of R utility functions covering various domains including Number Theory, Algebra, Combinatorics, and RStudio integration. These tools leverage high-precision arithmetic to provide robust mathematical and investigative capabilities.
 
 
 take a look at my youtube playlist with R Tutorials: 
