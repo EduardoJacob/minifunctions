@@ -1,57 +1,155 @@
-# minifunctions package
 
-This repository contains a collection of R utility functions covering various domains including Number Theory, Algebra, Combinatorics, and RStudio integration. These tools leverage high-precision arithmetic and external LLM APIs to provide robust mathematical and investigative capabilities.
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-take a look at my youtube playlist to see some of the functions in this package
-my playlist with R Tutorials: 
+# minifunctions <img src="man/figures/logo.png" align="right" height="138" alt="minifunctions package" />
 
----
+<!-- badges: start -->
 
-https://www.youtube.com/playlist?list=PLRbCt61PaxX2d0_QXh6Qi6_jAQd66fmcI
+<!-- badges: end -->
 
----
+This repository contains a collection of R utility functions covering
+various domains including Number Theory, Algebra, Combinatorics, and
+RStudio integration. These tools leverage high-precision arithmetic and
+external LLM APIs to provide robust mathematical and investigative
+capabilities.
 
-## Functions
+take a look at my youtube playlist with R Tutorials:
+
+------------------------------------------------------------------------
+
+<https://www.youtube.com/playlist?list=PLRbCt61PaxX2d0_QXh6Qi6_jAQd66fmcI>
+
+------------------------------------------------------------------------
+
+## Installation
+
+You can install the development version of minifunctions from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("EduardoJacob/minifunctions")
+```
+
+### Defined Functions
 
 ### Continued Fraction Utilities
-* **`continuedfraction(x, n=10)`**: Generates a vector representing the continued fraction of a given input number `x`. [cite_start]It allows for a specified precision `n` and is designed to handle high-precision fractions via the `gmp` package to avoid decimal inaccuracies[cite: 52, 53].
-* **`continuedfractioninverse(v)`**: Performs the inverse operation of a continued fraction, converting a vector of integers back into a single number or fraction. [cite_start]It utilizes `gmp::as.bigq` to maintain exact rational values during the reconstruction[cite: 53].
+
+- **`continuedfraction(x, n=10)`**: Generates a vector representing the
+  continued fraction of a given input number `x`. \[cite_start\]It
+  allows for a specified precision `n` and is designed to handle
+  high-precision fractions via the `gmp` package to avoid decimal
+  inaccuracies\[cite: 52, 53\].
+- **`continuedfractioninverse(v)`**: Performs the inverse operation of a
+  continued fraction, converting a vector of integers back into a single
+  number or fraction. \[cite_start\]It utilizes `gmp::as.bigq` to
+  maintain exact rational values during the reconstruction\[cite: 53\].
 
 ### Decimal and Fraction Conversions
-* **`decimalfixed(fixed)`**: Computes the exact fraction (numerator and denominator) that originates a given fixed decimal. [cite_start]It prevents scientific notation and automatically simplifies the resulting fraction using the Greatest Common Divisor (GCD)[cite: 53, 54].
-* [cite_start]**`decimalrepeating(dec)`**: Analyzes a string input containing a repeating decimal (denoted by square brackets, e.g., `"1.8[3]"`) and returns the equivalent exact fraction as a `bigq` object[cite: 54, 55, 56, 57, 58].
-* [cite_start]**`decimalrepeatinginverse(q)`**: The counterpart to the repeating decimal function, this takes a fraction and converts it into a string representation, correctly identifying and formatting the transient and repeating parts of the decimal[cite: 58, 59, 60, 61].
+
+- **`decimalfixed(fixed)`**: Computes the exact fraction (numerator and
+  denominator) that originates a given fixed decimal. \[cite_start\]It
+  prevents scientific notation and automatically simplifies the
+  resulting fraction using the Greatest Common Divisor (GCD)\[cite: 53,
+  54\].
+- \[cite_start\]**`decimalrepeating(dec)`**: Analyzes a string input
+  containing a repeating decimal (denoted by square brackets, e.g.,
+  `"1.8[3]"`) and returns the equivalent exact fraction as a `bigq`
+  object\[cite: 54, 55, 56, 57, 58\].
+- \[cite_start\]**`decimalrepeatinginverse(q)`**: The counterpart to the
+  repeating decimal function, this takes a fraction and converts it into
+  a string representation, correctly identifying and formatting the
+  transient and repeating parts of the decimal\[cite: 58, 59, 60, 61\].
 
 ### Combinatorics and Set Theory
-* [cite_start]**`derangement(n)`**: A recursive function that calculates the number of derangements (permutations where no element appears in its original position) for a set of size `n`[cite: 61, 62].
-* [cite_start]**`derangements(v)`**: Generates a full data frame containing all possible derangements of the elements provided in the input vector `v`[cite: 62, 63].
-* [cite_start]**`permutations(v, L)`**: Returns a data frame of all unique permutations of length `L` from vector `v`, allowing for cases where the input vector itself contains repeated values[cite: 93, 94].
-* [cite_start]**`powerset(v)`**: Generates the power set (all possible subsets, including the empty set) of a given vector `v` and returns them as a list of vectors[cite: 94, 95].
+
+- \[cite_start\]**`derangement(n)`**: A recursive function that
+  calculates the number of derangements (permutations where no element
+  appears in its original position) for a set of size `n`\[cite: 61,
+  62\].
+- \[cite_start\]**`derangements(v)`**: Generates a full data frame
+  containing all possible derangements of the elements provided in the
+  input vector `v`\[cite: 62, 63\].
+- \[cite_start\]**`permutations(v, L)`**: Returns a data frame of all
+  unique permutations of length `L` from vector `v`, allowing for cases
+  where the input vector itself contains repeated values\[cite: 93,
+  94\].
+- \[cite_start\]**`powerset(v)`**: Generates the power set (all possible
+  subsets, including the empty set) of a given vector `v` and returns
+  them as a list of vectors\[cite: 94, 95\].
 
 ### Number Theory and Arithmetic
-* [cite_start]**`digitalroot(n)`**: Recursively computes the digital root of an integer or string by summing its digits until a single-digit value is reached[cite: 63].
-* [cite_start]**`euclidnumbers(n)`**: Calculates the $n^{th}$ Euclid Number, defined as the product of the first $n$ primes plus one[cite: 72, 73].
-* **`fibonaccisequence(v, n)`**: Generates a Fibonacci-style sequence of length `n` starting from an initial vector `v`. [cite_start]It can handle standard Fibonacci sequences or variations based on the starting elements[cite: 73, 74].
-* [cite_start]**`multiplicativeorder(a, n)`**: Determines the multiplicative order of `a` modulo `n` (the smallest $k$ such that $a^k \equiv 1 \pmod n$), provided that $a$ and $n$ are coprime[cite: 83, 84, 85].
-* [cite_start]**`highprecision(a, operator, b)`**: Performs arithmetic operations between two arguments using 256-bit precision, leveraging the `Rmpfr` and `gmp` packages for high-accuracy calculations[cite: 77, 78].
-* [cite_start]**`repunit(n)`**: Generates a "repunit" string consisting of the digit '1' repeated `n` times[cite: 98, 99].
+
+- \[cite_start\]**`digitalroot(n)`**: Recursively computes the digital
+  root of an integer or string by summing its digits until a
+  single-digit value is reached\[cite: 63\].
+- \[cite_start\]**`euclidnumbers(n)`**: Calculates the $n^{th}$ Euclid
+  Number, defined as the product of the first $n$ primes plus one\[cite:
+  72, 73\].
+- **`fibonaccisequence(v, n)`**: Generates a Fibonacci-style sequence of
+  length `n` starting from an initial vector `v`. \[cite_start\]It can
+  handle standard Fibonacci sequences or variations based on the
+  starting elements\[cite: 73, 74\].
+- \[cite_start\]**`multiplicativeorder(a, n)`**: Determines the
+  multiplicative order of `a` modulo `n` (the smallest $k$ such that
+  $a^k \equiv 1 \pmod n$), provided that $a$ and $n$ are coprime\[cite:
+  83, 84, 85\].
+- \[cite_start\]**`highprecision(a, operator, b)`**: Performs arithmetic
+  operations between two arguments using 256-bit precision, leveraging
+  the `Rmpfr` and `gmp` packages for high-accuracy calculations\[cite:
+  77, 78\].
+- \[cite_start\]**`repunit(n)`**: Generates a “repunit” string
+  consisting of the digit ‘1’ repeated `n` times\[cite: 98, 99\].
 
 ### Base Conversions
-* [cite_start]**`numberconvertion(n, base1, base2)`**: Converts an integer from one base system to another (e.g., from base 10 to base 16)[cite: 86, 87, 88].
-* [cite_start]**`numberconversionfrac(n, numerator, denominator)`**: Converts a base-10 integer into a fractional base representation defined by a numerator and denominator[cite: 88, 89].
-* [cite_start]**`numberoperation(a, operator, b, base)`**: Performs an arithmetic operation on two numbers that are provided in a specific non-decimal base and returns the result in that same base[cite: 89].
+
+- \[cite_start\]**`numberconvertion(n, base1, base2)`**: Converts an
+  integer from one base system to another (e.g., from base 10 to base
+  16)\[cite: 86, 87, 88\].
+- \[cite_start\]**`numberconversionfrac(n, numerator, denominator)`**:
+  Converts a base-10 integer into a fractional base representation
+  defined by a numerator and denominator\[cite: 88, 89\].
+- \[cite_start\]**`numberoperation(a, operator, b, base)`**: Performs an
+  arithmetic operation on two numbers that are provided in a specific
+  non-decimal base and returns the result in that same base\[cite: 89\].
 
 ### Algebra and Numerical Methods
-* [cite_start]**`getfunctionpolynom(X, Y)`**: Computes a polynomial generating function that passes through a set of provided coordinates $(X, Y)$ using high-precision solvers[cite: 75, 76, 77].
-* [cite_start]**`newtonmethod(f, x0, n)`**: Approximates the root of a function `f` using the Newton-Raphson method, starting from an initial guess `x0` and running for `n` iterations[cite: 85, 86].
-* [cite_start]**`parabola(a, b, c)`**: Solves and displays properties of a parabola given in standard form ($ax^2 + bx + c$), providing the vertex, focus, directrix, and roots[cite: 91, 92].
-* [cite_start]**`parabolafromfocus(h, f, d)`**: Derives the equation and properties of a parabola based on the coordinates of its focus and the equation of its directrix[cite: 92, 93].
- 
+
+- \[cite_start\]**`getfunctionpolynom(X, Y)`**: Computes a polynomial
+  generating function that passes through a set of provided coordinates
+  $(X, Y)$ using high-precision solvers\[cite: 75, 76, 77\].
+- \[cite_start\]**`newtonmethod(f, x0, n)`**: Approximates the root of a
+  function `f` using the Newton-Raphson method, starting from an initial
+  guess `x0` and running for `n` iterations\[cite: 85, 86\].
+- \[cite_start\]**`parabola(a, b, c)`**: Solves and displays properties
+  of a parabola given in standard form ($ax^2 + bx + c$), providing the
+  vertex, focus, directrix, and roots\[cite: 91, 92\].
+- \[cite_start\]**`parabolafromfocus(h, f, d)`**: Derives the equation
+  and properties of a parabola based on the coordinates of its focus and
+  the equation of its directrix\[cite: 92, 93\].
+
 ### Data Visualization and Utility
-* [cite_start]**`displaymedia(filename)`**: A versatile viewer for RStudio that supports displaying images, PDFs, videos, and YouTube links from either local or cloud sources[cite: 63, 64, 65, 66, 67, 68, 69, 70, 71, 72].
-* [cite_start]**`printdataframe(df)`**: Renders an R data frame as a styled, interactive HTML table with alternating row colors and clickable URLs, optimized for the RStudio viewer[cite: 95, 96, 97, 98].
-* [cite_start]**`truthtable(f)`**: Generates a full truth table as a data frame for a given logical function `f`, mapping all possible Boolean input combinations to their results[cite: 100, 101, 102].
-* [cite_start]**`minmax(df)`**: Performs Min-Max normalization (scaling values to a 0–1 range) on all numeric columns within a data frame[cite: 83].
-* [cite_start]**`shufflein(v, n)`** and **`shuffleout(v, n)`**: Performs "In" and "Out" shuffles on a vector, simulating a perfect riffle shuffle for `n` iterations[cite: 99, 100].
-* [cite_start]**`getmonths()`**: Returns a vector of the abbreviations for the twelve months of the year in the user's current locale[cite: 77].
-* [cite_start]**`tableprop(v)`**: Displays a frequency table for a discrete variable `v`, showing both the absolute counts and the relative proportions[cite: 100].
+
+- \[cite_start\]**`displaymedia(filename)`**: A versatile viewer for
+  RStudio that supports displaying images, PDFs, videos, and YouTube
+  links from either local or cloud sources\[cite: 63, 64, 65, 66, 67,
+  68, 69, 70, 71, 72\].
+- \[cite_start\]**`printdataframe(df)`**: Renders an R data frame as a
+  styled, interactive HTML table with alternating row colors and
+  clickable URLs, optimized for the RStudio viewer\[cite: 95, 96, 97,
+  98\].
+- \[cite_start\]**`truthtable(f)`**: Generates a full truth table as a
+  data frame for a given logical function `f`, mapping all possible
+  Boolean input combinations to their results\[cite: 100, 101, 102\].
+- \[cite_start\]**`minmax(df)`**: Performs Min-Max normalization
+  (scaling values to a 0–1 range) on all numeric columns within a data
+  frame\[cite: 83\].
+- \[cite_start\]**`shufflein(v, n)`** and **`shuffleout(v, n)`**:
+  Performs “In” and “Out” shuffles on a vector, simulating a perfect
+  riffle shuffle for `n` iterations\[cite: 99, 100\].
+- \[cite_start\]**`getmonths()`**: Returns a vector of the abbreviations
+  for the twelve months of the year in the user’s current locale\[cite:
+  77\].
+- \[cite_start\]**`tableprop(v)`**: Displays a frequency table for a
+  discrete variable `v`, showing both the absolute counts and the
+  relative proportions\[cite: 100\].

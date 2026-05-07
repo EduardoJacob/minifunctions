@@ -18,6 +18,6 @@ Display the images in a folder as a grid using the magick package
 }
 \examples{
 \dontrun{
-imagegrid("P:/DISKD/Youtube R Programming/LOGOS")
+imagegrid("P:/DISKD/Youtube R Programming/AppLogos")
 }
 }

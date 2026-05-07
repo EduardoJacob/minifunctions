@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' imagegrid("P:/DISKD/Youtube R Programming/LOGOS")
+#' imagegrid("P:/DISKD/Youtube R Programming/AppLogos")
 #' }
 imagegrid = function(folder, ncol=0, nrow=0) {
   # Check if folder exists
@@ -17,11 +17,23 @@ imagegrid = function(folder, ncol=0, nrow=0) {
     return(NULL)
   }
 
+  files = list.files(folder, full.names = TRUE)
+  info = file.info(files)
+
+  files = data.frame(
+    file_name = basename(files),
+    created = as.Date(info$ctime)
+  )
+
+  # sort by created date descending
+  files = files[order(files$created, decreasing = TRUE), ]
+  rownames(files) = NULL
+
   file_paths = vector()
 
   # loop through the files in the folder
   N = 0
-  for ( file in list.files(folder) ) {
+  for ( file in files$file_name ) {
     extension = tolower( tools::file_ext(file) )
 
     # if extension not in the list of image extensions, skip the file
