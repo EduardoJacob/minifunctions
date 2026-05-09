@@ -27,7 +27,8 @@ printdataframe = function(df, expand_images = FALSE) {
       if (is.character(.)) {
         # Usamos ifelse (vetorizado) em vez de if simples para evitar o erro de 'length > 1'
         is_url = grepl("http", .)
-        is_img = grepl("\\.(jpg|jpeg|png|gif|webp)", ., ignore.case = TRUE)
+        is_img = grepl("\\.(jpg|jpeg|png|gif|webp)", ., ignore.case = TRUE) |
+                 grepl("img\\.shields\\.io", ., ignore.case = TRUE)
 
         # Lógica para links e imagens
         res = .

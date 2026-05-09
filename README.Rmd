@@ -75,7 +75,6 @@ pak::pak("EduardoJacob/minifunctions")
 * [cite_start]**`parabolafromfocus(h, f, d)`**: Derives the equation and properties of a parabola based on the coordinates of its focus and the equation of its directrix[cite: 92, 93].
  
 ### Data Visualization and Utility
-* [cite_start]**`displaymedia(filename)`**: A versatile viewer for RStudio that supports displaying images, PDFs, videos, and YouTube links from either local or cloud sources[cite: 63, 64, 65, 66, 67, 68, 69, 70, 71, 72].
 * [cite_start]**`printdataframe(df)`**: Renders an R data frame as a styled, interactive HTML table with alternating row colors and clickable URLs, optimized for the RStudio viewer[cite: 95, 96, 97, 98].
 * [cite_start]**`truthtable(f)`**: Generates a full truth table as a data frame for a given logical function `f`, mapping all possible Boolean input combinations to their results[cite: 100, 101, 102].
 * [cite_start]**`minmax(df)`**: Performs Min-Max normalization (scaling values to a 0–1 range) on all numeric columns within a data frame[cite: 83].

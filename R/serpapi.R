@@ -34,12 +34,6 @@ serpapi = function(prompt) {
       snippet = .x$snippet
     ))
 
-  # html = markdown::mark_html(text = answer)
-  #
-  # temp_file = tempfile(fileext = ".html")
-  # writeLines(html, temp_file)
-  #
-  # rstudioapi::viewer(temp_file)
 
   time_diff = difftime(Sys.time(), start_time, units = "secs")
   message("Elapsed ", round(time_diff, 2), " seconds.")

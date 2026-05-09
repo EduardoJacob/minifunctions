@@ -129,10 +129,6 @@ pak::pak("EduardoJacob/minifunctions")
 
 ### Data Visualization and Utility
 
-- \[cite_start\]**`displaymedia(filename)`**: A versatile viewer for
-  RStudio that supports displaying images, PDFs, videos, and YouTube
-  links from either local or cloud sources\[cite: 63, 64, 65, 66, 67,
-  68, 69, 70, 71, 72\].
 - \[cite_start\]**`printdataframe(df)`**: Renders an R data frame as a
   styled, interactive HTML table with alternating row colors and
   clickable URLs, optimized for the RStudio viewer\[cite: 95, 96, 97,

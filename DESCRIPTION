@@ -1,6 +1,6 @@
 Package: minifunctions
 Title: minifunctions package by Eduardo Jacob
-Version: 2026.05.07
+Version: 2026.05.09
 Authors@R: 
     person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0009-2103-852X"))
@@ -12,11 +12,8 @@ Depends:
 Imports:
     dplyr,
     gmp,
-    grid,
     gtools,
-    htmltools,
     httr2,
-    jpeg,
     kableExtra,
     knitr,
     magick,
@@ -24,14 +21,11 @@ Imports:
     numbers,
     numDeriv,
     oro.dicom,
-    png,
     polynom,
     primes,
     purrr,
     RColorBrewer,
     Rmpfr,
-    rstudioapi,
-    shiny,
     stringr,
     TeachingDemos,
     tools
