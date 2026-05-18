@@ -4,12 +4,12 @@
 \alias{imagerenamer}
 \title{Mass Rename and extension fix for images in a folder}
 \usage{
-imagerenamer(folder, image_suffix)
+imagerenamer(folder = getwd(), image_prefix)
 }
 \arguments{
-\item{folder}{Images Folder}
+\item{folder}{Optional Images Folder. Defaults to Current Working Directory}
 
-\item{image_suffix}{Image Suffix to be used on new names}
+\item{image_prefix}{Optional Image Prefix to be used on new names}
 }
 \description{
 Mass Rename and extension fix for images in a folder
