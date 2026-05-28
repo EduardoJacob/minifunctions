@@ -3,9 +3,9 @@
 if (file.exists(".Rbuildignore")) {
   current_file = basename( rstudioapi::getSourceEditorContext()$path )
   usethis::use_build_ignore(current_file)
-  usethis::use_build_ignore("StartLMstudio.ps1")
   usethis::use_build_ignore("images")
-
+  usethis::use_build_ignore("powershell")
+  usethis::use_build_ignore("Claude.md")
 }
 
 # No caso de falhar o "Package Check" com Codoc mismatches from Rd file
@@ -30,43 +30,16 @@ usethis::browse_github()
 
 
 # Start LM Studio if needed
-terminal_id = rstudiotools::terminal(".\\StartLMstudio.ps1",caption="LM Studio")
+terminal_id = rstudiotools::terminal("./powershell/LMstudioStart.ps1")
 # Start Claude Code if needed
-# rstudiotools::terminal("claude --model qwen/qwen3.5-9b", terminal_id = terminal_id)
+rstudiotools::terminal("claude --model qwen/qwen3.5-9b", terminal_id = terminal_id)
 
-# prompt = "Review the project and update claude.md to reflect the current architecture and recent changes."
-# rstudiotools::terminal(prompt, terminal_id = terminal_id)
+# Use Claude Code /init in order to describe the project and get a summary of the files in the project,
+# which can be used to fill in README.Rmd
 
-# 1. Load all functions in your /R directory into the environment package:rstudiotools
-# devtools::load_all()
-# devtools::unload(package="rstudiotools")
+# Start LM Studio if needed
+terminal_id = rstudiotools::terminal("./powershell/LMstudioEnd.ps1")
 
-# 2. Now run the check (do not use quotes around the function name)
-codetools::checkUsage(aligntext, all = TRUE)
-
-
-# Test lmstudio
-lmstudio()
-answer = lmstudio("What is the capital of Spain?")
-
-image = system.file("httr2.png", package = "ellmer")
-rstudiotools::displaymedia(image)
-answer = lmstudio("Describe this image",image=image)
-rstudiotools::viewmarkdown(answer)
-
-
-# Test gemini https://ai.google.dev/gemini-api/docs/models
-answer = gemini("What is the capital of El Salvador?",model="2.5-flash")
-
-answer = gemini("What is the capital of Guatemala?",model="3.1-flash-lite")
-
-answer = gemini("What is the capital of Spain ?",model="3-flash-preview")
-rstudiotools::viewmarkdown(answer[1])
-
-image = system.file("httr2.png", package = "ellmer")
-rstudiotools::displaymedia(image)
-answer = gemini("Describe this image",model="3-flash-preview",image=image)
-rstudiotools::viewmarkdown(answer[1])
 
 
 

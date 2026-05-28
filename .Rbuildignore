@@ -6,3 +6,5 @@
 ^README\.Rmd$
 ^SETUP\.R$
 ^images$
+^powershell$
+^Claude\.md$
