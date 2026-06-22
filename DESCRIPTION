@@ -1,6 +1,6 @@
 Package: minifunctions
 Title: minifunctions package by Eduardo Jacob
-Version: 2026.05.28
+Version: 2026.06.22
 Authors@R: 
     person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0009-2103-852X"))

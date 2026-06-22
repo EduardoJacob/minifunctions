@@ -2,7 +2,7 @@
 % Please edit documentation in R/serpapi.R
 \name{serpapi}
 \alias{serpapi}
-\title{Submit a prompt to SerpApi}
+\title{Submit a google search with SerpApi}
 \usage{
 serpapi(prompt)
 }
@@ -10,7 +10,7 @@ serpapi(prompt)
 \item{prompt}{Text prompt}
 }
 \description{
-Submit a prompt to SerpApi
+Submit a google search with SerpApi
 }
 \examples{
 \dontrun{

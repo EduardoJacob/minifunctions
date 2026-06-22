@@ -1,4 +1,4 @@
-#' Submit a prompt to SerpApi
+#' Submit a google search with SerpApi
 #'
 #' @param prompt Text prompt
 #'
@@ -34,14 +34,12 @@ serpapi = function(prompt) {
       snippet = .x$snippet
     ))
 
+  # add prompt column at the beginning of dataframe
+  answer = cbind(prompt=prompt,answer)
 
   time_diff = difftime(Sys.time(), start_time, units = "secs")
   message("Elapsed ", round(time_diff, 2), " seconds.")
 
-  # save html on current directory
-  # writeLines(html,"sepapi.html")
-
   return(answer)
-
 }
 
