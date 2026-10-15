@@ -1,6 +1,7 @@
 #' Submit a search to Tavily Service
 #'
 #' @param prompt Text prompt
+#' @param max_results Optional, defaults to one
 #'
 #' @export
 #'

@@ -8,6 +8,8 @@ tavily(prompt, max_results = 1)
 }
 \arguments{
 \item{prompt}{Text prompt}
+
+\item{max_results}{Optional, defaults to one}
 }
 \description{
 Submit a search to Tavily Service
