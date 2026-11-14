@@ -22,34 +22,57 @@ printdataframe = function(df, expand_images = FALSE) {
     dplyr::mutate(dplyr::across(dplyr::where(is.character), trimws))
 
   # Convert to clicable Links and expand images
-  df_processed = df |>
-    dplyr::mutate(dplyr::across(dplyr::everything(), ~ {
-      if (is.character(.)) {
-        # Usamos ifelse (vetorizado) em vez de if simples para evitar o erro de 'length > 1'
-        is_url = grepl("http", .)
-        is_img = grepl("\\.(jpg|jpeg|png|gif|webp)", ., ignore.case = TRUE) |
-                 grepl("img\\.shields\\.io", ., ignore.case = TRUE)
 
-        # Lógica para links e imagens
-        res = .
-        if (any(is_url)) {
-          res = ifelse(is_url,
-                       ifelse(expand_images & is_img,
-                              paste0("<a href='", ., "' target='_blank'><img src='", ., "'></a>"),
-                              paste0("<a href='", ., "' target='_blank'>", ., "</a>")),
-                       .)
+  # Iterate over dataframe columns
+  for (col in names(df)) {
+
+    # Only process character columns
+    if (is.character(df[[col]])) {
+
+      # Iterate over column elements
+      for (i in seq_along(df[[col]])) {
+
+        url = df[[col]][i]
+
+        # Check if value is an URL
+        is_url = grepl("^https?://", url)
+
+        if (is_url) {
+
+          # Check if URL points to an image
+          is_img = FALSE
+
+          if (expand_images) is_img = isimageurl(url)
+
+          # Generate HTML
+          if (is_img) {
+
+            df[[col]][i] = paste0(
+              "<a href='", url,
+              "' target='_blank'><img src='",
+              url, "'></a>"
+            )
+
+          } else {
+
+            df[[col]][i] = paste0(
+              "<a href='", url,
+              "' target='_blank'>",
+              url, "</a>"
+            )
+          }
         }
-        return(res)
-      } else {
-        return(.) # Retorna a coluna numérica intacta
       }
-    })) |>
+    }
+  }
+
+
 
   # Convert internal "\n" to "<br>"
-  dplyr::mutate(dplyr::across(dplyr::where(is.character), ~ gsub("\n", "<br>", .)))
+  df = df |> dplyr::mutate(dplyr::across(dplyr::where(is.character), ~ gsub("\n", "<br>", .)))
 
   # Generate HTML table
-  HTML = df_processed |>
+  HTML = df |>
     knitr::kable(format="html", row.names = T, caption = caption, escape = FALSE) |>
     kableExtra::kable_styling(bootstrap_options = c("striped", "hover"),
                               full_width = F,
