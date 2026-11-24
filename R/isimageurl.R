@@ -6,10 +6,10 @@
 #'
 #' @examples
 #' \dontrun{
-#' isimageurl("https://yt3.ggpht.com/tcKNto_1eN27XUiDvcXV984FKNdkpbCl5e6nZeW4l2DXXhx5AiSg9ZMuN_bNACscsUp-pWkRUy8=s88-c-k-c0x00ffffff-no-rj")
+#' isimageurl("https://yt3.ggpht.com/tcKNto_1eN27XUiDvx00ffffff-no-rj")
 #' }
 isimageurl = function(url) {
-  # url = "https://yt3.ggpht.com/tcKNto_1eN27XUiDvcXV984FKNdkpbCl5e6nZeW4l2DXXhx5AiSg9ZMuN_bNACscsUp-pWkRUy8=s88-c-k-c0x00ffffff-no-rj"
+  # url = "https://yt3.ggpht.com/tcKNto_1eN27XUiDvcXV90ffffff-no-rj"
   req <- httr2::request(url) |>
     httr2::req_method("HEAD") |>
     httr2::req_error(is_error = function(resp) FALSE)
